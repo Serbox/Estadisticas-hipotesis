@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Hipótesis</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!--  bostrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <style>
+        * {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(247, 247, 247);
+        }
+        header{
+            position: inherit;
+
+        }
+        .title {
+            position: absolute;
+            background-color: rgb(153, 153, 253);
+            width: 100%;
+            height: 10%;
+            color: aliceblue;
+            font-size: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        canvas {
+            max-width: 600px;
+            max-height: 300px;
+            margin-bottom: 20px;
+        }
+
+        .conjunto {
+            display: inline-flex;
+            justify-content: space-between; 
+            width: 90%;
+            max-width: 1200px; 
+            background-color: rgba(240, 240, 240, 0.171);
+            margin-top: 2%;
+            margin-left:3% ;
+        }
+        .cont, .cont2 {
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            width: calc(50% - 20px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin-bottom: 20px;
+        }
+        .contsecond{
+            display: inline-flex;
+            justify-content: space-between; 
+            width: 90%;
+            max-width: 1200px; 
+            background-color: rgba(240, 240, 240, 0.171);
+            margin-top: 3%;
+            margin-left:3% ;
+        }
+        .conttwo, .contthre {
+            position: relative;
+            background-color: rgb(255, 255, 255);
+            width: calc(50% - 20px);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            box-sizing: border-box;
+            margin-top: 100px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="title">
+            <h1>Prueba de Hipótesis: Edades de los estudiantes</h1>
+
+        </div>
+    </header>
+    <div class="contsecond">
+
+        <div class="contthre">
+            <div class="accordion" id="accordionPanelsStayOpenExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                      Contexto de la aplicación
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show">
+                    <div class="accordion-body">
+                      <strong>Concepto:</strong> En este ejemplo, se simula una prueba de hipotesis donde se comparan las medidas de una muestra aleatoria con una medida hipotética para determinar si hay evidencia suficiente para rechazar la hipotesis nula. <br>
+                      A continuación mostraremos los <strong> pasos</strong> que se deben de realizar.
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                     Paso #1
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <strong>Genera datos aleatoriamente</strong> se generaran datos aleatoriamente (edades simuladas) en varios grupos de estudiantes
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="false" aria-controls="panelsStayOpen-collapseThree">
+                      Paso #2
+                    </button>
+                  </h2>
+                  <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse">
+                    <div class="accordion-body">
+                      <strong> Renderizar Gráficos</strong> Se van a usar graficas una de barras y una de dona para visualizar los datos
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+        <div class="conttwo">
+            <div class="accordion" id="accordionExample">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Paso #3
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Calcular Estadistica</strong> 
+                    </div>Se calcula el estadistico para comparar la medida de muestra con una hipotetica.
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                     Paso #4
+                    </button>
+                  </h2>
+                  <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Obtener valor critico.</strong> Se determina el valor crítico necesario para comparar con el estadístico
+                    </div>
+                  </div>
+                </div>
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Paso #5
+                    </button>
+                  </h2>
+                  <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                    <div class="accordion-body">
+                      <strong>Mostramos el resultado de la prueba de hipotesis.</strong> Se muestra si se rechaza o se aprueba la hipotesis nula
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>
+    </div>
+    <div class="conjunto">
+    
+    <div class="cont">
+
+        
+        <label for="sampleSize">Grupos:</label>
+        <div class="input-group mb-3">
+            
+            <input type="number" id="sampleSize" class="form-control" placeholder="Ingresa un numero" aria-label="Recipient's username" aria-describedby="button-addon2">
+            <button class="btn btn-outline-primary" onclick="generarDatos()" type="button" id="button-addon2">Generar</button>
+        </div> 
+        <canvas id="myBarChart"></canvas>
+        <p>Resultado de la prueba de hipótesis:</p>
+        <div id="resultadoHipotesis"></div>
+
+    </div>
+    <div class="cont2">
+        <canvas id="myDoughnutChart"></canvas>
+
+    
+    </div>
+
+</div>
+
+<div id="resultadosHipotesis"></div>
+<!--  bostrap -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
